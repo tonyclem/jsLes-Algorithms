@@ -4,31 +4,39 @@
 
 function sumZero(arr) {
   for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] + arr[j] === 0) {
+    for (let j = 1; j < arr.length; j++) {
+      // add arr i and j together and check if it equal to 4 the return it
+      if (arr[i] + arr[j] === 4) {
         return [arr[i], arr[j]];
       }
     }
   }
 }
 
-console.log(sumZero([-4, -3, -2, -1, 0, 2, 5]));
-
+// console.log(sumZero([-9, -4, 1, 0, 4, 5]));
+// -3, -2, -1, 0, 2, // [-2, 2]
+//[-9, -4, 1, 0, 4, 5] // [0,4]
 // Time complexity - o(n^2)
 // Space Complexity - o(1)
 
 //      ==============  Refactor ===================  //
 
 function sumZero2(arr2) {
+  // by default left is zero
   let left = 0;
+  // reassign arr2 on variable called right
   let right = arr2.length - 1;
+  // is left greater then right ?
   while (left < right) {
     let sum = arr2[left] + arr2[right];
+    // if sum is equal to zero return the arr
     if (sum === 0) {
       return [arr2[left], arr2[right]];
+      //   if sum is greater than zero minus decrement sum then
     } else if (sum > 0) {
       right--;
     } else {
+      //   or plus or increment sum
       left++;
     }
   }
