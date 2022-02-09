@@ -41,3 +41,28 @@ function maxSubarraySum(arr, num) {
 }
 
 maxSubarraySum([2, 6, 9, 2, 8, 1, 5, 6, 3], 2); // 10
+
+function maxSubarraySum2(arr, num) {
+  let maxSum = 0;
+  let tempSum = 0;
+
+  // if num is greater then arr return null
+  if (num > arr.length) {
+    return null;
+  }
+
+  for (let i = 0; i < arr.length - num + 1; i++) {
+    maxSum += arr[i];
+  }
+
+  tempSum = maxSum;
+  for (let i = num; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - num] + arr[i];
+    // if tempSum is greater then maxSum, update to maxSum, same as line 34
+    maxSum = Math.max(maxSum, tempSum);
+    console.log(maxSum);
+  }
+  return maxSum;
+}
+
+maxSubarraySum2([2, 6, 9, 2, 1, 8, 5, 6, 3], 3);
