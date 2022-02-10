@@ -1,6 +1,6 @@
 // Creating pointer or values that correspond to an index or position and move towards the beginnig, end or middle based on a certain condition
 //          =========== Example ============            //
-//Write a function called sumZero whichc accepts a sorted array of intergers. The function should find the first pair where the sum is 0. return an array that includes both values that sum to zero or undefined if a pair does not exist
+//Write a function called sumZero which accepts a sorted array of intergers. The function should find the first pair where the sum is 0. return an array that includes both values that sum to zero or undefined if a pair does not exist
 
 function sumZero(arr) {
   for (let i = 0; i < arr.length; i++) {
