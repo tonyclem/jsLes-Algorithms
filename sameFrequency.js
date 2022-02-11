@@ -8,27 +8,24 @@
 // sameFrequency(22, 222) // true
 
 function sameFrequency(num1, num2) {
-  let strNum1 = num1.toString();
-  let strNum2 = num2.toString();
+  let strNum1 = num1;
+  let strNum2 = num2;
 
-  // firstiy we need to check if num1[i] and num[i] is'nt true
+  // firstly we need to check if num1[i] and num[i] is'nt true
   if (strNum1.length !== strNum2.length) {
     return false;
   }
-  // create a loop that we loop through
+  // Declearing countNum an empty object
   let countNum1 = {};
   let countNum2 = {};
 
+  // create a loop that we loop through
   for (let i = 0; i < strNum1.length; i++) {
-    countNum1 = strNum1[i]
-      ? countNum1[strNum1[i]] || +1
-      : (countNum1[strNum1[i]] = 1);
+    countNum1[strNum1[i]] = countNum1[strNum1[i]] || +1;
   }
 
   for (let j = 0; j < strNum1.length; j++) {
-    countNum2 = strNum2[i]
-      ? countNum2[strNum2[i]] || +1
-      : (countNum2[strNum1[i]] = 1);
+    countNum2[strNum2[i]] = countNum2[strNum2[i]] || +1;
   }
 
   for (let key in countNum1) {
@@ -36,8 +33,8 @@ function sameFrequency(num1, num2) {
       return false;
     }
   }
-  console.log(sortArr);
+
   return true;
 }
 
-console.log(sameFrequency([182, 281]));
+console.log(sameFrequency(182427, 42816));

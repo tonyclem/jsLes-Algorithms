@@ -5,3 +5,18 @@
 //areThereDuplicates(1,2,3) false
 //areThereDuplicates(1,2,2) true
 //areThereDuplicates('a', "b", "c", "a") true
+
+function areThereDuplicates() {
+  let collection = {};
+
+  for (let val in collection) {
+    collection[arguments[val]] = collection[arguments[val]] || 0 + 1;
+  }
+
+  for (let key in collection) {
+    if (collection[key] > 1) return true;
+  }
+  return false;
+}
+
+console.log(areThereDuplicates(0, -1, -2, 3, 2, 1));
