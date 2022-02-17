@@ -16,7 +16,7 @@ function countUniqueValues(arr) {
   return i + 1;
 }
 
-console.log(countUniqueValues([1, 2, 3, 4, 5, 6, 6]));
+console.log(countUniqueValues([1, 2, 3, 4, 5, 6, 7, 8, 8]));
 
 //[1, 1, 1, 2, 2, 3, 4, 5, 5, 5, 6, 7]
 // 0 1
