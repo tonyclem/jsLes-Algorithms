@@ -10,7 +10,7 @@ function areThereDuplicates() {
   let collection = {};
 
   for (let val in collection) {
-    collection[arguments[val]] = collection[arguments[val]] || 0 + 1;
+    collection[arguments[val]] = collection[arguments[val]] || 0 + 1; //?
   }
 
   for (let key in collection) {
