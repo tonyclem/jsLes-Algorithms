@@ -4,7 +4,7 @@ const checkAnagram = (letterA, letterB) => {
     return false;
   }
 
-  // create a lookup to look at the letter
+  // create a lookup to look at the letters
   const lookup = {};
 
   //   create a loop statement to loop through the argument

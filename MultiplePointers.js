@@ -10,7 +10,7 @@ function areThereDuplicates() {
   let collection = {};
 
   for (let val in collection) {
-    collection[arguments[val]] = collection[arguments[val]] || 0 + 1; //?
+    collection[arguments[val]] = collection[arguments[val]] || 0 + 1;
   }
 
   for (let key in collection) {
@@ -31,7 +31,7 @@ function areThereDuplicates() {
   }
   return false;
 }
-areThereDuplicates("a", "b", "c", "a"); // ?
+areThereDuplicates("a", "b", "c", "a");
 
 // Exercise 3
 function areThereDuplicates(...args) {
@@ -48,10 +48,10 @@ function areThereDuplicates(...args) {
   }
   return false;
 }
-areThereDuplicates(1, 2, 2); //?
+areThereDuplicates(1, 2, 2);
 
 // exercise 4
 function areThereDuplicates() {
   return new Set(arguments).size !== arguments.length;
 }
-// areThereDuplicates(2, 3, 2, 3, 4); // ?
+// areThereDuplicates(2, 3, 2, 3, 4);

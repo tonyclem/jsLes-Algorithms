@@ -31,4 +31,4 @@ function sameFrequency(num1, num2) {
   return true;
 }
 
-sameFrequency(3589578, 5879385); //?
+console.log(sameFrequency(3589578, 5879385));

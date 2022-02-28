@@ -13,7 +13,6 @@ const anagram = (firstL, secondL) => {
     let letterA = firstL[i];
     lookup[letterA] ? (lookup[letterA] += 1) : (lookup[letterA] = 1);
   }
-  console.log(lookup);
   // create loop to loop through the second giving values
   for (let i = 0; i < secondL.length; i++) {
     let letterB = secondL[i];
@@ -23,7 +22,6 @@ const anagram = (firstL, secondL) => {
       lookup[letterB] -= 1;
     }
   }
-  console.log(lookup);
   return true;
 };
 
