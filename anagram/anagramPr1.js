@@ -3,13 +3,11 @@ const checkAnagram = (letterA, letterB) => {
   if (letterA.length !== letterB.length) {
     return false;
   }
-  console.log(letterA);
-  console.log(letterB);
 
-  // creata a lookup to look at the letter
+  // create a lookup to look at the letter
   const lookup = {};
 
-  //   create a loop statement to loop throught the argument
+  //   create a loop statement to loop through the argument
   for (let i = 0; i < letterA.length; i++) {
     //   declared a new variable and pass in letterA
     let first = letterA[i];

@@ -10,19 +10,19 @@ function validAnagrams(first, second) {
 
   for (let i = 0; i < first.length; i++) {
     let letter = first[i];
-    // if letteer exists, imcrement, otherwise set it to 1
+    // if letter exists, increment, otherwise set it to 1
     lookup[letter] ? (lookup[letter] += 1) : (lookup[letter] = 1);
   }
 
   console.log(lookup);
 
   for (let i = 0; i < second.length; i++) {
-    let letter = second[i];
-    // can't find letter or letter is zero then it 's not an anagrams '
-    if (!lookup[letter]) {
+    let letter2 = second[i];
+    // can't find letter2 or letter2 is zero then it 's not an anagrams '
+    if (!lookup[letter2]) {
       return false;
     } else {
-      lookup[letter] -= 1;
+      lookup[letter2] -= 1;
     }
   }
   console.log(lookup);
