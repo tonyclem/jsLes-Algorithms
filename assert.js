@@ -2,7 +2,7 @@
 let num = 5 === 5;
 console.log(num);
 
-console.assert(2 !== 2, "So sorry is not true");
+console.assert(2 !== 3, "So sorry is not true");
 
 const add = (x, y) => {
   if (typeof x !== "number") {
@@ -25,6 +25,6 @@ const add = (x, y) => {
 // console.assert(_checkNum1_ === _checkNum2_, "Not true ");
 
 // Example
-const _checkNum1_ = add(-6, -5);
-const _checkNum2_ = -11;
+const _checkNum1_ = add(6, 5);
+const _checkNum2_ = 11;
 console.assert(_checkNum1_ === _checkNum2_, "Not true ");
