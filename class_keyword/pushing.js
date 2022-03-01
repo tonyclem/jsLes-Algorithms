@@ -66,11 +66,45 @@ class SinglyLinkedList {
     if (!this.head) {
       this.head = newNode;
       this.tail = this.head;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
     }
-    newNode.next = this.head;
-    this.head = newNode;
     this.length++;
     return this;
+  }
+
+  get(index) {
+    if (index < 0 || index >= this.length) return null;
+    let counter = 0;
+    let current = this.head;
+    while (counter !== index) {
+      current = this.head;
+      counter++;
+    }
+    return current;
+  }
+
+  set(index, val) {
+    let foundNode = this.get(index);
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
+
+  insert(index, val) {
+    if (index < 0 || index > length) return false;
+    if (index === length) return this.push(val);
+    if (index === 0) return this.unshift(val);
+    let newNode = new Node(val);
+    let prev = this.get(index - 1);
+    let temp = prev.next;
+    prev.next = newNode;
+    newNode.next = temp;
+    this.length++;
+    return true;
   }
 }
 
@@ -78,6 +112,8 @@ var list = new SinglyLinkedList();
 list.push("HELLO");
 list.push("GOODBYE");
 list.push("!");
+list.get(">3");
+list.get(":)");
 console.log(list);
 
 // pop
@@ -102,3 +138,24 @@ console.log(list);
 // set the head property on the list ti be that newly created node
 // increment the length of the list by 1
 // return the linked list
+
+// Get
+// This function should accept an index
+// if the index is less then zero or greater than or equal to the length of the list, return null
+// Loop through the list until you reach the index and return the nide at the specific index
+
+// set
+// this function should accept  a values and index
+// use your get function to find the specific node
+// if the node is not found, return false
+// if the node id found, set the value of the node ti be the value passed of the function and return true
+
+// insert
+// if the index is less than zero or greater than the length, return false
+// if the index is the same as the length, push a new node to the end of the list
+// if the index is 0, unshift a new node to the start of thr list
+// otherwise, using the get method, access the node at the index -1
+// set next property on that node to be the new node
+// set next property on the node to be the previous next
+// increment the length
+// return true
