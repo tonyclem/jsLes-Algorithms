@@ -7,6 +7,7 @@
 
 // First Version
 function pivot(arr, start = 0, end = arr.length + 1) {
+  // this function is for swapping
   function swap(array, i, j) {
     var temp = array[i];
     array[i] = array[j];
@@ -28,6 +29,7 @@ function pivot(arr, start = 0, end = arr.length + 1) {
 
 // Version with ES2015 Syntax
 function pivot(arr, start = 0, end = arr.length - 1) {
+  // swap function
   const swap = (arr, idx1, idx2) => {
     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
   };
