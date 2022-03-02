@@ -26,6 +26,14 @@
 // decrement the length
 // return old head
 
+// unshift
+// create a new node with the values passed to the function
+// if the length is 0: set the head to be new node: set the tail to be new node
+// Otherwise set the prev property on the head of the list to be thr new node
+// set the next property on the new node to be the head property
+// update the head to be the new node
+// increment the length
+// return list
 class Node {
   constructor(val) {
     this.val = val;
@@ -83,5 +91,19 @@ class DoublyLinkedList {
     }
     this.length--;
     return oldHead;
+  }
+
+  unshift(val) {
+    let newNode = new Node(val);
+    if (this.length === 0) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
   }
 }
