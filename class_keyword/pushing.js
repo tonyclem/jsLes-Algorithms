@@ -1,3 +1,4 @@
+// push
 // This function should accept a value
 // Create a new node using the value passes to the function
 // if there is no head property on the list, set the head and tail to be the newly created node
@@ -106,6 +107,22 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  reverse() {
+    let newNode = this.head;
+    this.tail = this.head;
+    this.tail = newNode;
+    let next;
+    let prev = null;
+
+    for (let i = 0; i < this.length; i++) {
+      next = newNode.next;
+      newNode.next = prev;
+      prev = node;
+      node = next;
+    }
+    return this;
+  }
 }
 
 var list = new SinglyLinkedList();
@@ -159,3 +176,14 @@ console.log(list);
 // set next property on the node to be the previous next
 // increment the length
 // return true
+
+// Reverse
+// swap the head and tail
+// create a variable called next
+// create a variable called prev
+// create a variable called node and initialize it to the head property
+// loop through the kist
+// set next to be the next property on whatever node is
+// set the next property on the node to be whatever prev is
+// set prev to be the values of the node variable
+// set the node variable to be the values if the next variable
