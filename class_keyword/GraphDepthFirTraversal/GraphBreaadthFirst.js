@@ -1,25 +1,14 @@
-// Depth first Traversal
-// The function should accept a starting node
-// Create a list to store the end result, to be returned at the very end
-// create an object to store visited vertices
-// create a helper function which accepts a vertex
-// The helper function should return early if the vertex is empty
-// The helper function should place the vertex it accepts into the visited object and push that vertex into the result array
-// Loop over all of the values in the adjacencyList for that vertex
-// If any of those values have not been visited, recursively invoke the helper function with the vertex
-// invoke the helper function with the starting vertex
-// Return the array
-
-// Iterative
-// The function should accept a starting node
-// Create stack to help use keep track of vertices (use a list/array)
-// Create a list to store the end result, to be returned at the very end
-// Create an object to store visited vertices
-// Add the starting vertex to the stack, and mark it visited
-// While the stack has something in it;
-// Pop the next vertex from the stack
-// If that vertex hasn't been visited yet:: Mark it as visited, :: Add it as result list :: Push all of its neighbors into the stack
-// Return the result array
+// Breadth First
+// This function should accept a starting vertex
+// create a queue (you can use an array) and place the starting vertex in it
+// Create an array to store the node visited
+// Create an object to store nodes visited
+// Mark the starting vertex as visited
+// Loop as long as there is anything in the queue
+// Remove the first vertex from the queue and push it into the array that stores node visited
+// loop over each vertex in the adjacency list for the vertex you are visiting.
+// If it not inside the object that stores node visited, mark it as visited and enqueue that vertex
+// Once you have finished looping, return the array of visited nodes.
 
 class Graph {
   constructor() {
@@ -84,7 +73,6 @@ class Graph {
     // and mark it visited
     visited[start] = true;
     let currentVertex;
-    //go through While the stack has something in it;
     while (stack.length) {
       // Pop the next vertex from the stack
       currentVertex = stack.pop();
@@ -104,29 +92,35 @@ class Graph {
     // Return the result array
     return result;
   }
+  BreadthFirst(start) {
+    // create a queue (you can use an array) and place the starting vertex
+    const queue = [start];
+    // Create an array to store the node visited
+    const result = [];
+    // Create an object to store nodes visited
+    const visited = {};
+    visited[start] = true;
+    let currentVertex;
+    while (queue.length) {
+      // Remove the first vertex from the queue
+      currentVertex = queue.shift();
+      // and push it into the array that stores node visited
+      result.push(currentVertex);
+      // loop over each vertex in the adjacency list for the vertex you are visiting.
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
+        // If it not inside the object that stores node visited
+        if (!visited[neighbor]) {
+          // mark it as visited and enqueue that vertex
+          visited[neighbor] = true;
+          queue.push(neighbor);
+        }
+      });
+    }
+    return result;
+  }
 }
 
+// If it not inside the object that stores node visited, mark it as visited and enqueue that vertex
+// Once you have finished looping, return the array of visited nodes.
+
 let g = new Graph();
-
-g.addVertex("A");
-g.addVertex("B");
-g.addVertex("C");
-g.addVertex("D");
-g.addVertex("E");
-g.addVertex("F");
-
-g.addEdge("A", "B");
-g.addEdge("A", "C");
-g.addEdge("B", "D");
-g.addEdge("C", "E");
-g.addEdge("D", "E");
-g.addEdge("D", "F");
-g.addEdge("E", "F");
-
-//          A
-//        /   \
-//       B     C
-//       |     |
-//       D --- E
-//        \   /
-//          F
