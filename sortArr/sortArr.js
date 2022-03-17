@@ -42,4 +42,4 @@ function sumZero2(arr2) {
   }
 }
 
-console.log(sumZero2([-4, -3, -2, -1, 0, 1, 2, 3, 10]));
+console.log(sumZero2([-10, -2, -3, -1, 0, 1, 2, 3, 10]));

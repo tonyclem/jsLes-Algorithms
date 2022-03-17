@@ -6,25 +6,25 @@ function anagram(first, second) {
   let lookup = {};
 
   for (let i = 0; i < first.length; i++) {
-    let firstLetter = first[i]; // ?
+    let firstLetter = first[i];
 
     lookup[firstLetter]
       ? (lookup[firstLetter] += 1)
-      : (lookup[firstLetter] = 1); // ?
+      : (lookup[firstLetter] = 1);
     console.log(lookup);
   }
 
   for (let i = 0; i < second.length; i++) {
-    let secondLetter = second[i]; // ?
+    let secondLetter = second[i];
 
     if (!lookup[secondLetter]) {
-      return false; // ?
+      return false;
     } else {
       lookup[secondLetter] -= 1;
-    } // ?
+    }
 
     console.log(lookup);
   }
-  return true; //?
+  return true;
 }
-console.log(anagram("company", "panycom")); // ?
+console.log(anagram("company", "panycom"));

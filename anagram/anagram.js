@@ -24,6 +24,7 @@ function validAnagrams(first, second) {
     } else {
       lookup[letter2] -= 1;
     }
+    /* !lookup[letter2] ? lookup[letter2] : (lookup[letter2] -= 1); */ // do some thing like above code
   }
   console.log(lookup);
   return true;
