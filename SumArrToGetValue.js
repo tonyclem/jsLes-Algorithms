@@ -12,7 +12,7 @@
 // });
 // console.log(result);
 
-let num = [5, 10, 20, 50, 10];
+let num = [5, 20, 50, 10];
 let getResult = [];
 num.forEach((sumNum, idx) => {
   let result;
