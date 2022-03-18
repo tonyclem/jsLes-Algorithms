@@ -16,9 +16,9 @@ let num = [5, 20, 50, 10];
 let getResult = [];
 num.forEach((sumNum, idx) => {
   let result;
-  for (let index = idx + 1; index < num.length; index++) {
-    if (sumNum + num[index] === 60) {
-      result = sumNum + num[index];
+  for (let i = idx + 1; i < num.length; i++) {
+    if (sumNum + num[i] === 60) {
+      result = sumNum + num[i];
       getResult.push(result);
     }
   }
