@@ -19,7 +19,7 @@ const _1_actual = add(3, 4);
 const _1_expected = 8;
 console.assert(_1_actual === _1_expected, "Sorry is false");
 
-// //   Example
+//   Example
 const _checkNum1_ = add(5, 5);
 const _checkNum2_ = 11;
 console.assert(_checkNum1_ === _checkNum2_, "Not true ");
