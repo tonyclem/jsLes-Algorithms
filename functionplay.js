@@ -6,4 +6,4 @@ function number(a, b) {
   return a;
 }
 
-console.log(number(a, b));
+number(a, b);

@@ -1,6 +1,6 @@
-// Creating pointer or values that correspond to an index or position and move towards the beginnig, end or middle based on a certain condition
+// Creating pointer or values that correspond to an index or position and move towards the beginning, end or middle based on a certain condition
 //          =========== Example ============            //
-//Write a function called sumZero which accepts a sorted array of intergers. The function should find the first pair where the sum is 0. return an array that includes both values that sum to zero or undefined if a pair does not exist
+//Write a function called sumZero which accepts a sorted array of integers. The function should find the first pair where the sum is 0. return an array that includes both values that sum to zero or undefined if a pair does not exist
 
 function sumZero(arr) {
   for (let i = 0; i < arr.length; i++) {
@@ -13,7 +13,7 @@ function sumZero(arr) {
   }
 }
 
-// console.log(sumZero([-9, -4, 1, 0, 4, 5]));
+sumZero([-9, -4, 1, 0, 4, 5]);
 // -3, -2, -1, 0, 2, // [-2, 2]
 //[-9, -4, 1, 0, 4, 5] // [0,4]
 // Time complexity - o(n^2)
@@ -42,4 +42,4 @@ function sumZero2(arr2) {
   }
 }
 
-console.log(sumZero2([-10, -2, -3, -1, 0, 1, 2, 3, 10]));
+// console.log(sumZero2([-10, -2, -3, -1, 0, 1, 2, 3, 10]));

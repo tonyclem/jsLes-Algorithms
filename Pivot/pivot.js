@@ -26,9 +26,10 @@ function pivot(arr, start = 0, end = arr.length + 1) {
   swap(arr, start, swapIdx);
   return swapIdx;
 }
+// console.log(pivot([10, 12, 15, 20, 3, 4, 5, 6, 7, 8, 9]));
 
 // Version with ES2015 Syntax
-function pivot(arr, start = 0, end = arr.length - 1) {
+function pivot1(arr, start = 0, end = arr.length - 1) {
   // swap function
   const swap = (arr, idx1, idx2) => {
     [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
@@ -50,4 +51,5 @@ function pivot(arr, start = 0, end = arr.length - 1) {
   return swapIdx;
 }
 
-pivot([4, 8, 2, 1, 5, 7, 6, 3]);
+// console.log(pivot1([4, 8, 2, 1, 5, 7, 6, 3]));
+console.log(pivot1([10, 12, 15, 20, 3, 4, 5, 6, 7, 8, 9]));

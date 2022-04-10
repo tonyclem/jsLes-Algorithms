@@ -53,4 +53,4 @@ const same2 = (num1, num2) => {
   return true;
 };
 
-console.log(same2([1, 2, 3, 2], [1, 4, 9, 4]));
+console.log(same([1, 2, 3, 2], [1, 4, 9, 4]));
